@@ -4,46 +4,178 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - MqttMainScreen</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/> *@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/MqttMainScreen.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true"/>
+    
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MqttMainScreen</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<!-- navbar -->
+<nav>
+    <div class="container">
+        <img src="~/img/mqtt-logo-ver.jpg" class="logo" alt="Mqtt">
+        <div class="search-bar">
+            <span class="material-icons-sharp">search</span>
+            <input type="search" placeholder="Search">
+        </div>
+        <div class="profile-area">
+            @* <div class="theme-btn"> *@
+            @*     <span class="material-icons-sharp active">light_mode</span> *@
+            @*     <span class="material-icons-sharp">dark_mode</span> *@
+            @* </div> *@
+            <div class="profile">
+                <div class="profile-photo">
+                    <img src="~/img/profile.jpeg" alt="profile1">
+                </div>
+                <h5>Feroz</h5>
+                <span class="material-icons-sharp">expand_more</span>
+            </div>
+            <button id="menu-btn">
+                <span class="material-icons-sharp">menu</span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
+        </div>
+    </div>
+</nav>
+<!-- main -->
+<main>
+    <!-- aside -->
+    <aside>
+        <button id="close-btn">
+            <span class="material-icons-sharp">close</span>
+        </button>
+        <div class="sidebar">
+            <a href="#" class="active">
+                <span class="material-icons-sharp">dashboard</span>
+                <h4>Dashboard</h4>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">currency_exchange</span>
+                <h4>Clients</h4>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">account_balance_wallet</span>
+                <h4>Wallet</h4>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">payment</span>
+                <h4>Transactions</h4>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">pie_chart</span>
+                <h4>Analytics</h4>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">insert_comment</span>
+                <h4>Messages</h4>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">help_center</span>
+                <h4>Help Center</h4>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">settings</span>
+                <h4>Settings</h4>
+            </a>
+        </div>
+    </aside>
+    <!-- section middle -->
+    <section class="middle">
+        @RenderBody()
+    </section>
+    <!-- section right -->
+    <section class="right">
+        <!-- investments -->
+        <div class="table-container">
+            <div class="header">
+                <h2>Client Details</h2>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Status</th>
+                        <th>LastConnected</th>
+                        <th><input type="checkbox" id="select-all"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Client 1</td>
+                        <td><i class="fas fa-circle status-icon online"></i></td>
+                        <td>9:14pm</td>
+                        <td><input type="checkbox" class="select-client"></td>
+                    </tr>
+                    <tr>
+                        <td>Client 2</td>
+                        <td><i class="fas fa-circle status-icon online"></i></td>
+                        <td>9:14pm</td>
+                        <td><input type="checkbox" class="select-client"></td>
+                    </tr>
+                    <tr>
+                        <td>Client 3</td>
+                        <td><i class="fas fa-circle status-icon offline"></i></td>
+                        <td>9:14pm</td>
+                        <td><input type="checkbox" class="select-client"></td>
+                    </tr>
+                    <tr>
+                        <td>McDonalds</td>
+                        <td><i class="fas fa-circle status-icon offline"></i></td>
+                        <td>9:14pm</td>
+                        <td><input type="checkbox" class="select-client"></td>
+                    </tr>
+                    <tr>
+                        <td>Uniliver</td>
+                        <td><i class="fas fa-circle status-icon offline"></i></td>
+                        <td>9:14pm</td>
+                        <td><input type="checkbox" class="select-client"></td>
+                    </tr>
+                    <tr>
+                        <td>Monster</td>
+                        <td><i class="fas fa-circle status-icon offline"></i></td>
+                        <td>9:14pm</td>
+                        <td><input type="checkbox" class="select-client"></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </nav>
-</header>
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
-</div>
+        <!-- recent transaction -->
+        <div class="recent-transactions">
+            <div class="header">
+                <h2>Options</h2>
+            </div>
+            <div class="options">
+                <button class="option-button" onclick="location.href='#'">
+                    <span class="material-icons-sharp">description</span>
+                    Log
+                </button>
+                <button class="option-button" onclick="location.href='#'">
+                    <span class="material-icons-sharp">security</span>
+                    TPM
+                </button>
+                <button class="option-button" onclick="location.href='#'">
+                    <span class="material-icons-sharp">build</span>
+                    Firmware
+                </button>
+                <button class="option-button" onclick="location.href='#'">
+                    <span class="material-icons-sharp">monitor_heart</span>
+                    Device Performance
+                </button>
+            </div>
+        </div>
+    </section>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2024 - MqttMainScreen - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
-</footer>
+</main>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/main.js"></script>
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

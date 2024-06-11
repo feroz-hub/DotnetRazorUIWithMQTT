@@ -1,8 +1,43 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="header">
+    <!-- <h1>Overview</h1>
+    <input type="date"> -->
+</div>
+<div class="process-request">
+    <h2>Process Request</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="target-id">Target Id</label>
+            <input type="text" id="target-id" name="target-id" required>
+        </div>
+        <div class="form-group">
+            <label for="source-id">Source Id</label>
+            <input type="text" id="source-id" name="source-id" required>
+        </div>
+        <div class="form-group">
+            <label for="action-type">Action Type</label>
+            <input type="text" id="action-type" name="action-type" required>
+        </div>
+        <div class="form-group">
+            <label for="request-date">Request Date</label>
+            <input type="date" id="request-date" name="request-date" required>
+        </div>
+        <div class="form-group">
+            <label for="is-ack-required">Is Ack Required</label>
+            <input type="checkbox" id="is-ack-required" name="is-ack-required">
+        </div>
+        <div class="form-group">
+            <label for="response-type">Response Type</label>
+            <input type="text" id="response-type" name="response-type" required>
+        </div>
+        <div class="form-group">
+            <label for="process-name">Process Name</label>
+            <input type="text" id="process-name" name="process-name" required>
+        </div>
+        <button type="submit">Send</button>
+    </form>
 </div>
