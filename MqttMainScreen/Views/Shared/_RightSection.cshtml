@@ -62,22 +62,21 @@
             <h2>Options</h2>
         </div>
         <div class="options">
-            <button class="option-button" onclick="location.href='#'">
-                <span class="material-icons-sharp">description</span>
-                Log
-            </button>
-            <button class="option-button" onclick="location.href='#'">
+            <a asp-controller="LogRequest" asp-action="Index" class="option-button">
+                <span class="material-icons-sharp">description</span>Log
+            </a>
+            <a asp-controller="Tpm" asp-action="Index" class="option-button">
                 <span class="material-icons-sharp">security</span>
                 TPM
-            </button>
-            <button class="option-button" onclick="location.href='#'">
-                <span class="material-icons-sharp">build</span>
+            </a>
+            <a asp-controller="Firmware" asp-action="Index" class="option-button">
+                <span class="material-icons-sharp">security</span>
                 Firmware
-            </button>
-            <button class="option-button" onclick="location.href='#'">
+            </a>
+            <a asp-controller="DevicePerformance" asp-action="Index" class="option-button">
                 <span class="material-icons-sharp">monitor_heart</span>
                 Device Performance
-            </button>
+            </a>
         </div>
     </div>
 </section>

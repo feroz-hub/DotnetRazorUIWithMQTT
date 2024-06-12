@@ -1,0 +1,62 @@
+@model LogRequestModel
+
+@{
+    ViewData["Title"] = "Create Log Request";
+}
+
+<h2>Create Log Request</h2>
+
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label asp-for="TargetId" class="control-label"></label>
+        <input asp-for="TargetId" class="form-control" />
+        <span asp-validation-for="TargetId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SourceId" class="control-label"></label>
+        <input asp-for="SourceId" class="form-control" />
+        <span asp-validation-for="SourceId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ActionType" class="control-label"></label>
+        <select asp-for="ActionType" class="form-control" asp-items="Html.GetEnumSelectList<ActionType>()"></select>
+        <span asp-validation-for="ActionType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RequestDate" class="control-label"></label>
+        <input asp-for="RequestDate" class="form-control" type="datetime-local" />
+        <span asp-validation-for="RequestDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IsAckRequired" class="control-label"></label>
+        <input asp-for="IsAckRequired" class="form-control" type="checkbox" />
+        <span asp-validation-for="IsAckRequired" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ActionValues" class="control-label"></label>
+        <select asp-for="ActionValues" class="form-control" asp-items="Html.GetEnumSelectList<ActionValues>()"></select>
+        <span asp-validation-for="ActionValues" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ResponseType" class="control-label"></label>
+        <select asp-for="ResponseType" class="form-control" asp-items="Html.GetEnumSelectList<ResponseType>()"></select>
+        <span asp-validation-for="ResponseType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FromDate" class="control-label"></label>
+        <input asp-for="FromDate" class="form-control" type="date" />
+        <span asp-validation-for="FromDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EndDate" class="control-label"></label>
+        <input asp-for="EndDate" class="form-control" type="date" />
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
