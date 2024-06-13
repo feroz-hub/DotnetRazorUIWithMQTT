@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/> *@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true"/>
@@ -45,43 +46,44 @@
 <main>
     <!-- aside -->
     <aside>
-        <button id="close-btn">
-            <span class="material-icons-sharp">close</span>
-        </button>
-        <div class="sidebar">
-            <a href="#" class="active">
-                <span class="material-icons-sharp">dashboard</span>
-                <h4>Dashboard</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">currency_exchange</span>
-                <h4>Clients</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">account_balance_wallet</span>
-                <h4>Wallet</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">payment</span>
-                <h4>Transactions</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">pie_chart</span>
-                <h4>Analytics</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">insert_comment</span>
-                <h4>Messages</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">help_center</span>
-                <h4>Help Center</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">settings</span>
-                <h4>Settings</h4>
-            </a>
-        </div>
+        @await Html.PartialAsync("_Sidebar")
+        @* <button id="close-btn"> *@
+        @*     <span class="material-icons-sharp">close</span> *@
+        @* </button> *@
+        @* <div class="sidebar"> *@
+        @*     <a href="#" class="active"> *@
+        @*         <span class="material-icons-sharp">dashboard</span> *@
+        @*         <h4>Dashboard</h4> *@
+        @*     </a> *@
+        @*     <a href="#"> *@
+        @*         <span class="material-icons-sharp">currency_exchange</span> *@
+        @*         <h4>Clients</h4> *@
+        @*     </a> *@
+        @*     <a href="#"> *@
+        @*         <span class="material-icons-sharp">account_balance_wallet</span> *@
+        @*         <h4>Wallet</h4> *@
+        @*     </a> *@
+        @*     <a href="#"> *@
+        @*         <span class="material-icons-sharp">payment</span> *@
+        @*         <h4>Transactions</h4> *@
+        @*     </a> *@
+        @*     <a href="#"> *@
+        @*         <span class="material-icons-sharp">pie_chart</span> *@
+        @*         <h4>Analytics</h4> *@
+        @*     </a> *@
+        @*     <a href="#"> *@
+        @*         <span class="material-icons-sharp">insert_comment</span> *@
+        @*         <h4>Messages</h4> *@
+        @*     </a> *@
+        @*     <a href="#"> *@
+        @*         <span class="material-icons-sharp">help_center</span> *@
+        @*         <h4>Help Center</h4> *@
+        @*     </a> *@
+        @*     <a href="#"> *@
+        @*         <span class="material-icons-sharp">settings</span> *@
+        @*         <h4>Settings</h4> *@
+        @*     </a> *@
+        @* </div> *@
     </aside>
     <!-- section middle -->
     <section class="middle">
@@ -94,7 +96,7 @@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/js/main.js"></script>
+<script src="~/js/main.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
