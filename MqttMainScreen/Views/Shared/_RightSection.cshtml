@@ -1,4 +1,7 @@
 @* Views/Shared/_RightSection.cshtml *@
+<script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" >
+
 <section class="right">
     <!-- investments -->
     <div class="table-container">
@@ -6,7 +9,7 @@
             <h2>Client Details</h2>
         </div>
         <div class="table-wrapper">
-            <table>
+            <table id='tbllist'>
                 <thead>
                     <tr>
                         <th>Client</th>
@@ -80,3 +83,21 @@
         </div>
     </div>
 </section>
+
+<script>
+    $(document).ready(function () {
+        // Select all checkboxes functionality
+        $('#select-all').click(function () {
+            $('.select-client').prop('checked', this.checked);
+        });
+ 
+        // Change row style based on status
+        $('tr').each(function () {
+            if ($(this).find('.status-icon').hasClass('online')) {
+                $(this).css('background-color', '#e0ffe0'); // Light green for online
+            } else if ($(this).find('.status-icon').hasClass('offline')) {
+                $(this).css('background-color', '#ffe0e0'); // Light red for offline
+            }
+        });
+    });
+</script>

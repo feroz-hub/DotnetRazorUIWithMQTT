@@ -13,6 +13,7 @@
 //     sidebar.style.display = 'none';
 // })
 
+
 // change theme //
 const themeBtn = document.querySelector('.theme-btn');
 
@@ -23,13 +24,6 @@ themeBtn.addEventListener('click', () => {
     themeBtn.querySelector('span:last-child').classList.toggle('active');
 })
 
-document.getElementById('select-all').addEventListener('change',function() {
-    const checkboxes = document.querySelectorAll('.select-client');
-    for(const checkbox of checkboxes)
-    {
-        checkbox.checked = this.checked;
-    }
-});
 
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
@@ -52,3 +46,4 @@ function menuBtnChange() {
         closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
     }
 }
+
