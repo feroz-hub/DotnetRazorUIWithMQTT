@@ -227,46 +227,54 @@ main aside{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 88vh;
+    height: 85vh;
 }
-main aside button#close-btn{
-    border: none;
-    /* will be show only on mobile and tablets */
-    display: none;
-}
-main aside .sidebar a{
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    height: 4.2rem;
-    color: var(--color-gray-light);
-    position: relative;
-}
-main aside .sidebar a span{
-    font-size: 1.7rem;
-    margin-left: 3rem;
-    transition: all 0.3s;
-}
-main aside .sidebar a.active{
-    background: var(--color-white);
-    color: var(--color-primary);
-}
-main aside .sidebar a.active::before{
-    content: '';
-    width: 6px;
-    height: 100%;
-    position: absolute;
-    background: var(--color-primary);
-}
-main aside .sidebar a:hover{
-    color: var(--color-primary);
-}
-main aside .sidebar a:hover span{
-    margin-left: 2rem;
-}
-main aside .sidebar h4{
-    font-weight: 500;
-}
+/*main aside button#close-btn{*/
+/*    border: none;*/
+/*    !* will be show only on mobile and tablets *!*/
+/*    display: none;*/
+/*}*/
+/*main aside .sidebar {*/
+/*    width: 250px; !* width when expanded *!*/
+/*    transition: width 0.5s ease-in-out; !* animate the width property over 0.5 seconds *!*/
+/*}*/
+
+/*main aside .sidebar.collapsed {*/
+/*    width: 50px; !* width when collapsed *!*/
+/*}*/
+/*main aside .sidebar a{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    gap: 1.2rem;*/
+/*    height: 4.2rem;*/
+/*    color: var(--color-gray-light);*/
+/*    position: relative;*/
+/*}*/
+/*main aside .sidebar a span{*/
+/*    font-size: 1.7rem;*/
+/*    margin-left: 3rem;*/
+/*    transition: all 0.3s;*/
+/*}*/
+/*main aside .sidebar a.active{*/
+/*    background: var(--color-white);*/
+/*    color: var(--color-primary);*/
+/*}*/
+/*main aside .sidebar a.active::before{*/
+/*    content: '';*/
+/*    width: 6px;*/
+/*    height: 100%;*/
+/*    position: absolute;*/
+/*    background: var(--color-primary);*/
+/*}*/
+/*main aside .sidebar a:hover{*/
+/*    color: var(--color-primary);*/
+/*}*/
+/*main aside .sidebar a:hover span{*/
+/*    margin-left: 2rem;*/
+/*}*/
+/*main aside .sidebar h4{*/
+/*    font-weight: 500;*/
+/*}*/
 
 /*main aside .sidebar{*/
 /*    position: fixed;*/
