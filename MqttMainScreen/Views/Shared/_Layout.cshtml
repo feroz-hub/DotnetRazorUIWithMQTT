@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - MqttMainScreen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
-
-    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
@@ -16,10 +13,6 @@
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/> *@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
-
-    
-    
 </head>
 <body>
 <!-- navbar -->
@@ -51,47 +44,10 @@
 <!-- main -->
 <main>
     <!-- aside -->
-    <aside>
-        @* @await Html.PartialAsync("_Sidebar") *@
-        <button id="close-btn">
-            <span class="material-icons-sharp">close</span>
-        </button>
-        <div class="sidebar">
-            <a href="#" class="active">
-                <span class="material-icons-sharp">dashboard</span>
-                <h4>Dashboard</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">currency_exchange</span>
-                <h4>Clients</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">account_balance_wallet</span>
-                <h4>Wallet</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">payment</span>
-                <h4>Transactions</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">pie_chart</span>
-                <h4>Analytics</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">insert_comment</span>
-                <h4>Messages</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">help_center</span>
-                <h4>Help Center</h4>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp">settings</span>
-                <h4>Settings</h4>
-            </a>
-        </div>
-        
-    </aside>
+    @* <aside> *@
+    @*     @await Html.PartialAsync("_Sidebar") *@
+    @* </aside> *@
+    
     <!-- section middle -->
     <section class="middle">
         @RenderBody()
@@ -101,13 +57,9 @@
 
 </main>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="~/js/main.js" asp-append-version="true"></script>
-<script>
-    
-</script>
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
