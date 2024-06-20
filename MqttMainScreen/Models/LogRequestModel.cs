@@ -35,15 +35,9 @@ public enum ActionType
     LogRequest,
     PatchRequest,
     ProcessRequest,
-    Tpmsetup,
-    Tpmclr,
-    Tpmcngpass,
-    Tpmseal,
-    Tpmunseal,
-    Tpmdelseal,
-    Tpmaddkey,
-    Tpmdelkey,
-    Tpmgetkey,
+    TpmConfiguration,
+    TpmSealStorage,
+    TpmNvStorage
 }
 
 public enum LogType

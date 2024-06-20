@@ -218,7 +218,7 @@ nav .profile-area button{
 /* <!-- aside --> */
 main{
     display: grid;
-    grid-template-columns:auto 40rem;
+    grid-template-columns: 16rem auto 40rem;
     gap: 2rem;
     width: 96%;
     margin: 1rem auto 4rem;

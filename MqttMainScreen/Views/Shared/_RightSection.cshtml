@@ -1,14 +1,6 @@
 @* Views/Shared/_RightSection.cshtml *@
-    <!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-
-<!-- DataTables JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-
-<!-- FontAwesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+<script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" >
 
 <section class="right">
     <!-- investments -->
@@ -17,7 +9,7 @@
             <h2>Client Details</h2>
         </div>
         <div class="table-wrapper">
-            <table id="clientTable" class="display">
+            <table id='tbllist'>
                 <thead>
                     <tr>
                         <th>Client</th>
@@ -98,7 +90,7 @@
         $('#select-all').click(function () {
             $('.select-client').prop('checked', this.checked);
         });
-
+ 
         // Change row style based on status
         $('tr').each(function () {
             if ($(this).find('.status-icon').hasClass('online')) {
@@ -109,25 +101,3 @@
         });
     });
 </script>
-@* <script> *@
-@* $(document).ready(function() { *@
-@*     const table = $('#clientTable').DataTable({ *@
-@*         // DataTables options can go here *@
-@*         "paging": true,  // Enable pagination *@
-@*         "searching": true,  // Enable search *@
-@*         "info": true  // Show table info *@
-@*     }); *@
-@* *@
-@*     // Handle the select all checkbox functionality *@
-@*     $('#select-all').on('click', function() { *@
-@*         const rows = table.rows({'search': 'applied'}).nodes(); *@
-@*         $('input[type="checkbox"]', rows).prop('checked', this.checked); *@
-@*     }); *@
-@* *@
-@*     // Handle individual row checkbox click *@
-@*     $('#clientTable tbody').on('change', 'input[type="checkbox"].select-client', function() { *@
-@*         const allChecked = $('input[type="checkbox"].select-client').length === $('input[type="checkbox"].select-client:checked').length; *@
-@*         $('#select-all').prop('checked', allChecked); *@
-@*     }); *@
-@* }); *@
-@* </script> *@
