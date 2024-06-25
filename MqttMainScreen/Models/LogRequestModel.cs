@@ -15,13 +15,20 @@ public class LogRequestModel
     public DateTime EndDate { get; set; }
 }
 
+public class MqttLogRequest
+{
+    public Guid RequestId { get; set; }
+    public string TargetId { get; init; }
+    public string SourceId { get; init; }
+    public ActionType ActionType { get; init; }
+    public DateTime RequestDate { get; set; }
+    public bool IsAckRequired { get; init; }
+    public LogRequestDto LogRequestDto { get; set; }
+}
 public class LogRequestDto
 {
-   
-    public bool IsAckRequired { get; init; }
     public List<LogType>  LogTypes { get; init; }=default!;
     public List<LogLevel> LogLevels { get; init; }=default!;
-    public ResponseType ResponseType { get; init; }
     public DateTime FromDate { get; set; }
     public DateTime EndDate { get; set; }
 }
