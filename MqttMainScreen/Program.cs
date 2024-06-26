@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using MqttMainScreen.Data;
-using MqttMainScreen.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

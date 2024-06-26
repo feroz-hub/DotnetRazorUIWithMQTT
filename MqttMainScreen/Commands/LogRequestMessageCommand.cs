@@ -1,4 +1,3 @@
-using MediatR;
 using MqttMainScreen.Models;
 
 namespace MqttMainScreen.Commands;

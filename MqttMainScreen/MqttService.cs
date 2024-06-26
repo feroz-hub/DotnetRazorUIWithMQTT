@@ -1,7 +1,3 @@
-using System.Collections.Concurrent;
-using MQTTnet;
-using MQTTnet.Client;
-
 namespace MqttMainScreen;
 
 public class MqttService
