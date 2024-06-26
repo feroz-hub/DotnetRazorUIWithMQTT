@@ -4,20 +4,12 @@ using MqttMainScreen.Models;
 
 namespace MqttMainScreen.Controllers;
 
-public class HomeController : Controller
+public class HomeController(IMqttClientRepository mqttClientRepository) : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
     public IActionResult Index()
     {
         return View();
     }
-
     public IActionResult Privacy()
     {
         return View();
@@ -27,5 +19,11 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    public async Task<IActionResult> RightSection()
+    {
+        var clients=await mqttClientRepository.GetAllClientsAsync();
+        return PartialView("_RightSection", clients);
     }
 }

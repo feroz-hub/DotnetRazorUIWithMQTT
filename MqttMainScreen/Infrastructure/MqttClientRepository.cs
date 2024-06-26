@@ -8,33 +8,33 @@ public class MqttClientRepository(ApplicationDbContext dbContext):IMqttClientRep
 {
     public async Task<List<string>> GetActiveClientIdsAsync()
     {
-        return await dbContext.MqttClientRegistrations
-            .Where(client => client.IsConnected)
-            .Select(client => client.Id.ToString())
+        return await dbContext.MqttClients
+            .Where(client => client.Status)
+            .Select(client => client.ClientId.ToString())
             .ToListAsync();
     }
 
-    public async Task<List<MqttClientRegistration>> GetAllClientsAsync()
+    public async Task<List<Client>> GetAllClientsAsync()
     {
-        return await dbContext.MqttClientRegistrations.ToListAsync();
+        return await dbContext.MqttClients.ToListAsync();
     }
 
     public async Task<List<string>> GetAllClient()
     {
-        return await dbContext.MqttClientRegistrations
-            .Select(client => client.Name)
+        return await dbContext.MqttClients
+            .Select(client => client.DeviceName)
             .ToListAsync();
     }
 
-    public async Task RegisterClientAsync(MqttClientRegistration mqttClientRegistration)
+    public async Task RegisterClientAsync(Client mqttClientRegistration)
     {
-        dbContext.MqttClientRegistrations.Add(mqttClientRegistration);
+        dbContext.MqttClients.Add(mqttClientRegistration);
         await dbContext.SaveChangesAsync();
     }
 
-    public async Task UpdateClientAsync(MqttClientRegistration clientRegistration)
+    public async Task UpdateClientAsync(Client clientRegistration)
     {
-        dbContext.MqttClientRegistrations.Update(clientRegistration);
+        dbContext.MqttClients.Update(clientRegistration);
         await dbContext.SaveChangesAsync();
     }
 }

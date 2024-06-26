@@ -1,3 +1,4 @@
+@model IEnumerable<Client>
 @* $1$ Views/Shared/_RightSection.cshtml #1# *@
 @* <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script> *@
 @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" > *@
@@ -116,144 +117,46 @@
                             <thead>
                             <tr>
                                 <th>Client Id</th>
-                                <th>Device S.No</th>
                                 <th>Device Name</th>
-                                <th>Registered DateTime</th>
+                                <th>Created</th>
+                                <th>Subscribed Topics</th>
                                 <th>Last Accessed</th>
                                 <th>Status</th>
+                                <th>Keep Alive</th>
+                                <th>IP Address</th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
                                 <th>Client Id</th>
-                                <th>Device S.No</th>
                                 <th>Device Name</th>
-                                <th>Registered DateTime</th>
+                                <th>Created</th>
+                                <th>Subscribed Topics</th>
                                 <th>Last Accessed</th>
                                 <th>Status</th>
+                                <th>Keep Alive</th>
+                                <th>IP Address</th>
                             </tr>
                             </tfoot>
                             <tbody>
+                            @foreach (var client in Model)
+                            {
                             <tr>
-                                <td>1001</td>
-                                <td>SN12345</td>
-                                <td>Device Alpha</td>
-                                <td>2023/05/12 14:30</td>
-                                <td>2024/06/24 09:45</td>
-                                <td>Active</td>
+                                <td>@client.ClientId</td>
+                                <td>@client.DeviceName</td>
+                                <td>@client.Created.ToString("yyyy/MM/dd HH:mm")</td>
+                                <td>
+                                    @foreach (var topic in client.SubscribedTopics)
+                                    {
+                                    <span>@topic</span><br />
+                                    }
+                                </td>
+                                <td>@client.LastAccessed.ToString("yyyy/MM/dd HH:mm")</td>
+                                <td>@client.Status ? "Active" : "Inactive"</td>
+                                <td>@client.KeepAlive</td>
+                                <td>@client.IpAddress</td>
                             </tr>
-                            <tr>
-                                <td>1002</td>
-                                <td>SN12346</td>
-                                <td>Device Beta</td>
-                                <td>2023/06/11 11:20</td>
-                                <td>2024/06/23 10:15</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>1003</td>
-                                <td>SN12347</td>
-                                <td>Device Gamma</td>
-                                <td>2023/07/21 09:45</td>
-                                <td>2024/06/22 16:30</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td>1004</td>
-                                <td>SN12348</td>
-                                <td>Device Delta</td>
-                                <td>2023/08/10 13:00</td>
-                                <td>2024/06/21 14:50</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td>1005</td>
-                                <td>SN12349</td>
-                                <td>Device Epsilon</td>
-                                <td>2023/09/15 08:25</td>
-                                <td>2024/06/20 11:10</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>1006</td>
-                                <td>SN12350</td>
-                                <td>Device Zeta</td>
-                                <td>2023/10/22 10:40</td>
-                                <td>2024/06/19 12:35</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td>1007</td>
-                                <td>SN12351</td>
-                                <td>Device Eta</td>
-                                <td>2023/11/30 15:55</td>
-                                <td>2024/06/18 13:25</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>1008</td>
-                                <td>SN12352</td>
-                                <td>Device Theta</td>
-                                <td>2023/12/05 17:10</td>
-                                <td>2024/06/17 14:15</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td>1009</td>
-                                <td>SN12353</td>
-                                <td>Device Iota</td>
-                                <td>2024/01/14 18:20</td>
-                                <td>2024/06/16 15:05</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td>1010</td>
-                                <td>SN12354</td>
-                                <td>Device Kappa</td>
-                                <td>2024/02/28 19:30</td>
-                                <td>2024/06/15 16:55</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>1011</td>
-                                <td>SN12355</td>
-                                <td>Device Lambda</td>
-                                <td>2024/03/18 20:40</td>
-                                <td>2024/06/14 17:45</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td>1012</td>
-                                <td>SN12356</td>
-                                <td>Device Mu</td>
-                                <td>2024/04/01 21:50</td>
-                                <td>2024/06/13 18:35</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>1013</td>
-                                <td>SN12357</td>
-                                <td>Device Nu</td>
-                                <td>2024/05/12 22:00</td>
-                                <td>2024/06/12 19:25</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td>1014</td>
-                                <td>SN12358</td>
-                                <td>Device Xi</td>
-                                <td>2024/06/20 23:10</td>
-                                <td>2024/06/11 20:15</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>1015</td>
-                                <td>SN12359</td>
-                                <td>Device Omicron</td>
-                                <td>2024/07/25 07:20</td>
-                                <td>2024/06/10 21:05</td>
-                                <td>Active</td>
-                            </tr>
+                            }
                             </tbody>
                         </table>
                     </div>
