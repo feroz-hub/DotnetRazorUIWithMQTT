@@ -6,9 +6,10 @@ namespace MqttMainScreen.Controllers;
 
 public class HomeController(IMqttClientRepository mqttClientRepository) : Controller
 {
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var clients=await mqttClientRepository.GetAllClientsAsync();
+        return View(clients);
     }
     public IActionResult Privacy()
     {
