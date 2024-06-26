@@ -110,7 +110,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        DataTable Example
+                        Devices
                     </div>
                     <div class="card-body">
                         <table id="datatablesSimple">
@@ -133,12 +133,12 @@
                             <tbody>
                             @foreach (var client in Model)
                             {
-                            <tr>
-                                <td>@client.DeviceName</td>
-                                <td>@client.LastAccessed.ToString("yyyy/MM/dd HH:mm")</td>
-                                <td>@client.Status</td>
-                                <td><input type="checkbox" name="selectedClients" value="@client.DeviceName"></td>
-                            </tr>
+                                <tr>
+                                    <td>@client.DeviceName</td>
+                                    <td>@client.LastAccessed.ToString("yyyy/MM/dd HH:mm")</td>
+                                    <td>@client.Status</td>
+                                    <td><input type="checkbox" name="selectedClients" value="@client.DeviceName"></td>
+                                </tr>
                             }
                             </tbody>
                         </table>
@@ -148,4 +148,6 @@
         </div>
     </nav>
 </div>
+
+
 
