@@ -22,9 +22,5 @@ public class HomeController(IMqttClientRepository mqttClientRepository) : Contro
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public async Task<IActionResult> RightSection()
-    {
-        var clients=await mqttClientRepository.GetAllClientsAsync();
-        return PartialView("_RightSection", clients);
-    }
+   
 }

@@ -16,6 +16,5 @@ public class MqttClientRegistrationDto
     public Guid Id { get; set; }
     public string DeviceName { get; set; }
     public DateTime Created { get; set; }
-    public List<string> SubscribedTopics { get; set; }
     public int KeepAlive { get; set; }
 }

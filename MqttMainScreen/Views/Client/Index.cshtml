@@ -1,0 +1,64 @@
+@model IEnumerable<Client>
+<div id="layoutSidenav_right">
+    <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordionRight">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Right Side</div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        DataTable Example
+                    </div>
+                    <div class="card-body">
+                        <table id="datatablesSimple">
+                            <thead>
+                            <tr>
+                                <th>Client Id</th>
+                                <th>Device Name</th>
+                                <th>Created</th>
+                                <th>Subscribed Topics</th>
+                                <th>Last Accessed</th>
+                                <th>Status</th>
+                                <th>Keep Alive</th>
+                                <th>IP Address</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>Client Id</th>
+                                <th>Device Name</th>
+                                <th>Created</th>
+                                <th>Subscribed Topics</th>
+                                <th>Last Accessed</th>
+                                <th>Status</th>
+                                <th>Keep Alive</th>
+                                <th>IP Address</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            @foreach (var client in Model)
+                            {
+                            <tr>
+                                <td>@client.ClientId</td>
+                                <td>@client.DeviceName</td>
+                                <td>@client.Created.ToString("yyyy/MM/dd HH:mm")</td>
+                                <td>
+                                    @foreach (var topic in client.SubscribedTopics)
+                                    {
+                                    <span>@topic</span><br />
+                                    }
+                                </td>
+                                <td>@client.LastAccessed.ToString("yyyy/MM/dd HH:mm")</td>
+                                <td>@client.Status</td>
+                                <td>@client.KeepAlive</td>
+                                <td>@client.IpAddress</td>
+                            </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

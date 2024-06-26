@@ -1,4 +1,4 @@
-@model IEnumerable<Client>
+
 @* $1$ Views/Shared/_RightSection.cshtml #1# *@
 @* <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script> *@
 @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" > *@
@@ -116,45 +116,28 @@
                         <table id="datatablesSimple">
                             <thead>
                             <tr>
-                                <th>Client Id</th>
                                 <th>Device Name</th>
-                                <th>Created</th>
-                                <th>Subscribed Topics</th>
                                 <th>Last Accessed</th>
                                 <th>Status</th>
-                                <th>Keep Alive</th>
-                                <th>IP Address</th>
+                                <th>Select</th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
-                                <th>Client Id</th>
                                 <th>Device Name</th>
-                                <th>Created</th>
-                                <th>Subscribed Topics</th>
                                 <th>Last Accessed</th>
                                 <th>Status</th>
-                                <th>Keep Alive</th>
-                                <th>IP Address</th>
+                                <th>Select</th>
                             </tr>
                             </tfoot>
                             <tbody>
                             @foreach (var client in Model)
                             {
                             <tr>
-                                <td>@client.ClientId</td>
                                 <td>@client.DeviceName</td>
-                                <td>@client.Created.ToString("yyyy/MM/dd HH:mm")</td>
-                                <td>
-                                    @foreach (var topic in client.SubscribedTopics)
-                                    {
-                                    <span>@topic</span><br />
-                                    }
-                                </td>
                                 <td>@client.LastAccessed.ToString("yyyy/MM/dd HH:mm")</td>
-                                <td>@client.Status ? "Active" : "Inactive"</td>
-                                <td>@client.KeepAlive</td>
-                                <td>@client.IpAddress</td>
+                                <td>@client.Status</td>
+                                <td><input type="checkbox" name="selectedClients" value="@client.DeviceName"></td>
                             </tr>
                             }
                             </tbody>
